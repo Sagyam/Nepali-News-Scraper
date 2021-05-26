@@ -4,9 +4,8 @@ from ..items import ScraperItem
 
 class OnlineKhabarSpider(scrapy.Spider):
     name = 'online_khabar'
-    start_urls = ['https://www.onlinekhabar.com/2021/05/959064']
-
-
+    with open("online_khabar_urls.txt", "rt") as f:
+        start_urls = [url.strip() for url in f.readlines()]
 
     def parse(self, response):
 
@@ -37,7 +36,7 @@ class OnlineKhabarSpider(scrapy.Spider):
         1 split by :
         2 map into int so that  devnagari numbers convert to english
         3 cast the map to list
-        4 map the list of int back to str 
+        4 map the list of int back to str
         5 cast the map to list
         6 concat the mapped list with :
         '''

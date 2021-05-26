@@ -20,9 +20,11 @@ htmlcov/
 /tests/keys/localhost.crt
 /tests/keys/localhost.key
 # Ignore Scraped data
+*.txt
 *.csv
 *.json
 *.xml
 *.sqlite
 # Windows
 Thumbs.db
+
