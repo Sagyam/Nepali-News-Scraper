@@ -3,7 +3,7 @@ from urllib.request import Request, urlopen
 
 
 def gen_sitemap_urls():
-    for num in range(1, 122):
+    for num in range(1, 2):
         gen_url = 'https://www.onlinekhabar.com/wp-sitemap-posts-post-' + \
             str(num) + '.xml'
         yield gen_url
@@ -23,9 +23,8 @@ def get_links():
 
 
 def write_to_file(count=0):
-    file = open('online_khabar_urls.txt', "a")
+    file = open('../data/online_khabar_urls.txt', "a")
     for url in get_links():
-        # print(url)
         if len(url) > 10:
             file.write(url + '\n')
             count += 1
@@ -34,6 +33,6 @@ def write_to_file(count=0):
 
 
 if __name__ == "__main__":
-    file = open('online_khabar_urls.txt', 'w')
+    file = open('./online_khabar_urls.txt', 'w')
     file.close()
     write_to_file()

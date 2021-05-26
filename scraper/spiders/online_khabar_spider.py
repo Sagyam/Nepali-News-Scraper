@@ -6,7 +6,7 @@ import get_urls
 class OnlineKhabarSpider(scrapy.Spider):
     name = 'online_khabar'
     get_urls.write_to_file()
-    with open("../online_khabar_urls.txt", "rt") as f:
+    with open("../data/online_khabar_urls.txt", "rt") as f:
         start_urls = [url.strip() for url in f.readlines()]
 
     def parse(self, response):
