@@ -23,7 +23,6 @@ htmlcov/
 
 # Ignore Scraped data
 # online_khabar_urls.txt
-/data/*
 *.csv
 *.json
 *.xml
@@ -32,3 +31,4 @@ htmlcov/
 Thumbs.db
 
 scrapinghub.yml
+data/online_khabar_urls.txt

@@ -3,7 +3,7 @@ from urllib.request import Request, urlopen
 
 
 def gen_sitemap_urls():
-    for num in range(1, 2):
+    for num in range(1, 122):
         gen_url = 'https://www.onlinekhabar.com/wp-sitemap-posts-post-' + \
             str(num) + '.xml'
         yield gen_url

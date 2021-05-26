@@ -1,11 +1,17 @@
 import scrapy
 from ..items import ScraperItem
 import get_urls
+import os
 
 
 class OnlineKhabarSpider(scrapy.Spider):
     name = 'online_khabar'
-    get_urls.write_to_file()
+
+    # Check if it's first run
+    if not os.path.exists('../data'):
+        os.makedirs('../data')
+        get_urls.write_to_file()
+
     with open("../data/online_khabar_urls.txt", "rt") as f:
         start_urls = [url.strip() for url in f.readlines()]
 
