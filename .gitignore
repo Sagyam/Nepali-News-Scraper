@@ -19,6 +19,10 @@ htmlcov/
 .mypy_cache/
 /tests/keys/localhost.crt
 /tests/keys/localhost.key
-
+# Ignore Scraped data
+*.csv
+*.json
+*.xml
+*.sqlite
 # Windows
 Thumbs.db

@@ -6,16 +6,7 @@ class OnlineKhabarSpider(scrapy.Spider):
     name = 'online_khabar'
     start_urls = ['https://www.onlinekhabar.com/2021/05/959064']
 
-    # def gen_sitemap_urls(self):
-    #     url_list = []
-    #     for num in range(1, 123):
-    #         base_url = 'https://www.onlinekhabar.com/wp-sitemap-posts-post-' + \
-    #             str(num) + '.xml'
-    #         url_list.append(base_url)
-    #     return url_list
 
-    def get_all_urls(self):
-        pass
 
     def parse(self, response):
 
