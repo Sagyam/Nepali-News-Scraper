@@ -22,7 +22,7 @@ htmlcov/
 /tests/keys/localhost.key
 
 # Ignore Scraped data
-online_khabar_urls.txt
+# online_khabar_urls.txt
 *.csv
 *.json
 *.xml
