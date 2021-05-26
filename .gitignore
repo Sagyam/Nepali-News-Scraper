@@ -1,5 +1,6 @@
 /venv
 /.vagrant
+.scrapy
 /scrapy.iml
 *.pyc
 _trial_temp*
@@ -19,6 +20,7 @@ htmlcov/
 .mypy_cache/
 /tests/keys/localhost.crt
 /tests/keys/localhost.key
+
 # Ignore Scraped data
 online_khabar_urls.txt
 *.csv
@@ -28,3 +30,4 @@ online_khabar_urls.txt
 # Windows
 Thumbs.db
 
+scrapinghub.yml

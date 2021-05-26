@@ -4,7 +4,7 @@ from ..items import ScraperItem
 
 class OnlineKhabarSpider(scrapy.Spider):
     name = 'online_khabar'
-    with open("online_khabar_urls.txt", "rt") as f:
+    with open("../online_khabar_urls.txt", "rt") as f:
         start_urls = [url.strip() for url in f.readlines()]
 
     def parse(self, response):
@@ -13,8 +13,8 @@ class OnlineKhabarSpider(scrapy.Spider):
 
         title = response.css('h2.mb-0::text').extract_first()
         month, year = response.url.split("/")[-2], response.url.split("/")[-3]
-        nepali_date_time = response.xpath(
-            '//*[@id="main"]/section/div/div[1]/div[3]/div/div[2]/span/text()').extract_first()
+        nepali_date_time = response.css(
+            'div.post__time').css('span::text').get()
         category = response.css('a.current_page::text').get()
         news = response.css(
             'div.main__read--content').xpath('.//p/text()').getall()
