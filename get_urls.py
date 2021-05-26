@@ -22,7 +22,7 @@ def get_links():
             yield link
 
 
-def write_to_file(count):
+def write_to_file(count=0):
     file = open('online_khabar_urls.txt', "a")
     for url in get_links():
         # print(url)
@@ -36,4 +36,4 @@ def write_to_file(count):
 if __name__ == "__main__":
     file = open('online_khabar_urls.txt', 'w')
     file.close()
-    write_to_file(count=0)
+    write_to_file()
