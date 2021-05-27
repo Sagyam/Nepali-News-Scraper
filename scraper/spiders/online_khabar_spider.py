@@ -28,9 +28,10 @@ def get_links():
 
 
 def write_to_file():
-    file = open('../data/online_khabar_urls.txt', "a")
+    file = open('./data/online_khabar_urls.txt', "a")
     for url in get_links():
         if len(url) > 10:
+            url = url.strip('\n')
             file.write(url + '\n')
             print(url, 'Found')
     file.close()
@@ -38,9 +39,9 @@ def write_to_file():
 
 def prepare_dir():
     # Check if it's first run
-    if not os.path.exists('../data'):
-        os.makedirs('../data')
-    file = open('../data/online_khabar_urls.txt', 'w')
+    if not os.path.exists('./data'):
+        os.makedirs('./data')
+    file = open('./data/online_khabar_urls.txt', 'w')
     file.close()
     write_to_file()
 
@@ -52,7 +53,7 @@ class OnlineKhabarSpider(scrapy.Spider):
     name = 'online_khabar'
     prepare_dir()
 
-    with open("../data/online_khabar_urls.txt", "rt") as f:
+    with open("./data/online_khabar_urls.txt", "rt") as f:
         start_urls = [url.strip() for url in f.readlines()]
 
     def parse(self, response):
