@@ -1,16 +1,56 @@
 import scrapy
 from ..items import ScraperItem
-import get_urls
+# from ..get_urls import write_to_file
 import os
 
+from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
 
-class OnlineKhabarSpider(scrapy.Spider):
-    name = 'online_khabar'
 
+def gen_sitemap_urls():
+    for num in range(1, 2):
+        gen_url = 'https://www.onlinekhabar.com/wp-sitemap-posts-post-' + \
+            str(num) + '.xml'
+        yield gen_url
+
+
+def get_links():
+    for url in gen_sitemap_urls():
+        req = Request(url,  headers={'User-Agent': 'Mozilla/5.0'})
+        response = urlopen(req).read().decode('utf-8')
+        parser = 'lxml'
+        soup = BeautifulSoup(response, parser)
+        links = soup.text
+        links = ['https://' +
+                 half_link for half_link in links.split('https://')]
+        for link in links:
+            yield link
+
+
+def write_to_file():
+    file = open('../data/online_khabar_urls.txt', "a")
+    for url in get_links():
+        if len(url) > 10:
+            file.write(url + '\n')
+            print(url, 'Found')
+    file.close()
+
+
+def prepare_dir():
     # Check if it's first run
     if not os.path.exists('../data'):
         os.makedirs('../data')
-        get_urls.write_to_file()
+    file = open('../data/online_khabar_urls.txt', 'w')
+    file.close()
+    write_to_file()
+
+
+class OnlineKhabarSpider(scrapy.Spider):
+
+    """Note name, start_urls are scrapy varibles
+        and must never be renamed """
+    name = 'online_khabar'
+    prepare_dir()
 
     with open("../data/online_khabar_urls.txt", "rt") as f:
         start_urls = [url.strip() for url in f.readlines()]

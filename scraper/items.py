@@ -16,4 +16,4 @@ class ScraperItem(scrapy.Item):
     Category = scrapy.Field()
     News = scrapy.Field()
     Link = scrapy.Field()
-    Extra = scrapy.Field()
+    # Extra = scrapy.Field()
