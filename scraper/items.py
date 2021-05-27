@@ -3,8 +3,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-from time import monotonic
-from langdetect.language import Language
+
 import scrapy
 
 
