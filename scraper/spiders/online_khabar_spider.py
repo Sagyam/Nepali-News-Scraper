@@ -1,6 +1,6 @@
 import scrapy
 from ..items import ScraperItem
-# from ..get_urls import write_to_file
+from langdetect import detect
 import os
 
 from bs4 import BeautifulSoup
@@ -71,6 +71,9 @@ class OnlineKhabarSpider(scrapy.Spider):
         news = ''.join(news)
         news = news.replace('\n', '')
 
+        # Detect language
+        lang = detect(news)
+
         # Extract Nepali date time from a string
         # string format->  २०७८ जेठ १२ गते १३:०८ मा प्रकाशित
         nepali_date_time = nepali_date_time.split(' ')
@@ -99,6 +102,7 @@ class OnlineKhabarSpider(scrapy.Spider):
         items['Category'] = category
         items['News'] = news
         items['Link'] = response.url
+        items['Language'] = lang
         # items['Extra'] = extra
 
         yield items

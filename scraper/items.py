@@ -4,6 +4,7 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 from time import monotonic
+from langdetect.language import Language
 import scrapy
 
 
@@ -16,4 +17,5 @@ class ScraperItem(scrapy.Item):
     Category = scrapy.Field()
     News = scrapy.Field()
     Link = scrapy.Field()
+    Language = scrapy.Field()
     # Extra = scrapy.Field()
