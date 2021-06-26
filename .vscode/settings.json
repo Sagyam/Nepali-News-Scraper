@@ -1,5 +1,14 @@
 {
     "python.pythonPath": "venv/bin/python",
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 10,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:Nepali-News-Scraper}/data/news.db",
+            "name": "News Database"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
 }
