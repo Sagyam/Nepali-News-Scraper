@@ -1,41 +1,83 @@
-# Nepali-News-Scraper
+![Logo](https://www.onlinekhabar.com/wp-content/themes/onlinekhabar-2018/img/logoMain.png)
+![GitHub](https://img.shields.io/github/license/sagyam/Nepali-News-Scraper?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Sagyam/Nepali-News-Scraper?style=for-the-badge)
+![Lines of code](https://img.shields.io/tokei/lines/github/sagyam/Nepali-News-Scraper?style=for-the-badge)
 
-Nepali News Scraper Bot written with Scrapy
+# Nepali News Scraper
 
-## Setup
+A crawler that scrapes news from a nepali news portal [Online Khabar](onlinekhabar.com)
 
-### **Clone the repo**
+## Run Locally
 
-`git clone https://github.com/Sagyam/Nepali-News-Scraper.git`
+Clone the project
 
-### **If virtualenv is not installed then**
+```bash
+  git clone https://github.com/Sagyam/Nepali-News-Scraper
+```
 
-`pip install virtualenv`
+Go to the project directory
 
-### **Create a virtual enviroment**
+```bash
+  cd Nepali-News-Scraper
+```
 
-`virtualenv venv`
+Create a virtual enviroment
 
-### **Activate the virual enviroment**
+```bash
+ virtualenv venv
+```
 
-_Windows_
+Activate the virtual enviroment
 
-`venv\Scripts\activate`
+**For Windows**
 
-_Linux or OS X_
+```bash
+ venv\Scripts\activate
+```
 
-`source venv/bin/activate`
+**For Linux / OSX**
 
-### **Install Dependencies**
+```bash
+source venv/bin/activate
+```
 
-`pip install -r requirements.txt`
+Install dependencies
 
-## Usage
+```bash
+  pip install -r requirements.txt
+```
 
-### **Goto scraper directory**
+Start Crawling
 
-`cd sraper`
+```bash
+  cd sraper
+  scrapy crawl online_khabar
+```
 
-**Save data as csv**
+# Caution ⚠️
 
-`scrapy crawl online_khabar -o ../data/data.csv `
+- \***\*To pause gracefully crawling hit Ctrl+C once\*\***
+- \***\*To pause forcefully hit Ctrl+C twice\*\***
+- \***\*It is recommended to scrape 2000 pages in one go\*\***
+
+## Roadmap
+
+- Build wew spider for https://ekantipur.com/
+
+## Tech Stack
+
+**Tested using:**
+
+- Python 3.7.3
+- Scrapy 2.5.0
+- BeautifulSoup 4.9.3
+
+## Related
+
+Here are some related projects
+
+[hemanta212/scrapers](https://github.com/hemanta212/scrapers)
+
+## Feedback
+
+If you have any feedback, please reach out to me at sagyamthapa32@gmail.com
