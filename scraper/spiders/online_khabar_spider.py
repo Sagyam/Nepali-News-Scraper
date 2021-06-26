@@ -1,13 +1,11 @@
 import scrapy
 from ..items import ScraperItem
+from config import MAX_VAL, MIN_VAL
 from langdetect import detect
 import os
 
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
-
-MIN_VAL = 1
-MAX_VAL = 123
 
 
 def gen_sitemap_urls():

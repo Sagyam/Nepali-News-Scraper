@@ -1,4 +1,5 @@
 /venv
+/data
 /.vagrant
 .scrapy
 /scrapy.iml
