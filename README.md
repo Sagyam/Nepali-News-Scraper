@@ -53,7 +53,7 @@ Open config.py and choose a **MAX_VAL** and **MIN_VAL**
 Start Crawling
 
 ```bash
-  cd sraper
+  cd scraper
   scrapy crawl online_khabar
 ```
 
