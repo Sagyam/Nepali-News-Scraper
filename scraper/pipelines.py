@@ -47,7 +47,7 @@ class ScraperPipeline:
 
             ))
             self.conn.commit()
-            print(item['Link'] + ' Written to DataBase')
+#             print(item['Link'] + ' Written to DataBase')
         except sqlite3.IntegrityError:
             print(item['Link'] + " was a duplicate")
 
