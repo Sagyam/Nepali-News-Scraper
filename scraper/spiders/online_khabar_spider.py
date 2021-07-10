@@ -34,7 +34,7 @@ def write_to_file():
         if len(url) > 10:
             url = url.strip('\n')
             file.write(url + '\n')
-            print(url, 'Found')
+#            print(url, 'Found')
     file.close()
 
 
