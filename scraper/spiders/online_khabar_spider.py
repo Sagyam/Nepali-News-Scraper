@@ -16,39 +16,32 @@ def gen_sitemap_urls():
 
 
 def get_links():
+    parser = 'lxml'
     for url in gen_sitemap_urls():
         req = Request(url,  headers={'User-Agent': 'Mozilla/5.0'})
         response = urlopen(req).read().decode('utf-8')
-        parser = 'lxml'
         soup = BeautifulSoup(response, parser)
         links = soup.text
         links = ['https://' +
                  half_link for half_link in links.split('https://')]
-        for link in links:
-            yield link
+        yield from links
 
 
 def write_to_file():
-    file = open('./data/online_khabar_urls.txt', "w")
-    for url in get_links():
-        if len(url) > 10:
-            url = url.strip('\n')
-            file.write(url + '\n')
-#            print(url, 'Found')
-    file.close()
+    with open('./data/online_khabar_urls.txt', "w") as file:
+        for url in get_links():
+            if len(url) > 10:
+                url = url.strip('\n')
+                file.write(url + '\n')
 
 
 def prepare_dir():
     # Check if it's first run
     if not os.path.exists('./data'):
         os.makedirs('./data')
-        file = open('./data/online_khabar_urls.txt', 'w')
-        file.close()
-        write_to_file()
-    else:
-        file = open('./data/online_khabar_urls.txt', 'w')
-        file.close()
-        write_to_file()
+    file = open('./data/online_khabar_urls.txt', 'w')
+    file.close()
+    write_to_file()
 
 
 class OnlineKhabarSpider(scrapy.Spider):
