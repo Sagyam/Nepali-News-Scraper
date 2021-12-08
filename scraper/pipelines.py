@@ -16,7 +16,7 @@ class ScraperPipeline:
         self.create_table()
 
     def create_connection(self):
-        self.conn = sqlite3.connect('./data/news.db')
+        self.conn = sqlite3.connect('./data/online_khabar.db')
         self.curr = self.conn.cursor()
 
     def create_table(self):
