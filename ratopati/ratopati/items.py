@@ -8,5 +8,6 @@ import scrapy
 
 class RatopatiItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    Title = scrapy.Field()
+    Url = scrapy.Field()
+    News = scrapy.Field()

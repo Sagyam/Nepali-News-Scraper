@@ -16,7 +16,7 @@ class ScraperPipeline:
         self.create_table()
 
     def create_connection(self):
-        self.conn = sqlite3.connect('./data/online_khabar.db')
+        self.conn = sqlite3.connect('../online_khabar.db')
         self.curr = self.conn.cursor()
 
     def create_table(self):
@@ -26,8 +26,6 @@ class ScraperPipeline:
                             Title text,
                             Category text,
                             English_Date text,
-                            Nepali_Date text,
-                            Time text,
                             Language text,
                             News text
 )""")
@@ -35,19 +33,17 @@ class ScraperPipeline:
     def store_to_db(self, item):
         try:
             self.curr.execute("""
-                                INSERT INTO news_table VALUES (?,?,?,?,?,?,?,?)""", (
+                                INSERT INTO news_table VALUES (?,?,?,?,?,?)""", (
                 item['Link'],
                 item['Title'],
                 item['Category'],
                 item['English_Date'],
-                item['Nepali_Date'],
-                item['Time'],
                 item['Language'],
                 item['News']
 
             ))
             self.conn.commit()
-#             print(item['Link'] + ' Written to DataBase')
+            print(item['Link'] + ' Written to DataBase')
         except sqlite3.IntegrityError:
             print(item['Link'] + " was a duplicate")
 

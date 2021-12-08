@@ -1,4 +1,6 @@
+############################################################################
 '''
+Configuration for Online Khabar 
 This value can go from 1 to 123
 Each value contains 2000 pages
     ie if MIN_VAL = 1

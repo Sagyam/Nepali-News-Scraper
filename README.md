@@ -48,20 +48,27 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
-Open config.py and choose a **MAX_VAL** and **MIN_VAL**
+Open the respective config.py file change parameters as needed
 
-Start Crawling
+Start Crawling Online Khabar
 
 ```bash
   cd scraper
   scrapy crawl online_khabar
 ```
 
+Start Crawling Ratopati
+
+```bash
+  cd scraper
+  scrapy crawl ratopati_spider
+```
+
 # Caution ⚠️
 
 - **To pause gracefully crawling hit Ctrl+C once**
 - **To pause forcefully hit Ctrl+C twice**
-- **It is recommended to scrape 2000 pages in one go**
+- **For OnlineKhabar it is recommended to scrape 2000 pages in one go**
 
 ## Roadmap
 

@@ -1,20 +1,28 @@
 import scrapy
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
+from ..items import RatopatiItem
+from config import START_INDEX, END_INDEX
 
 
-class RatopatiSpiderSpider(CrawlSpider):
+def gen_urls():
+    for i in range(START_INDEX, END_INDEX):
+        yield 'https://ratopati.com/story/' + str(i)
+
+
+class RatopatiSpiderSpider(scrapy.Spider):
     name = 'ratopati_spider'
-    allowed_domains = ['scrapy.org']
-    start_urls = ['http://scrapy.org/']
 
-    rules = (
-        Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True),
-    )
+    start_urls = [url for url in gen_urls()]
 
-    def parse_item(self, response):
-        item = {}
-        #item['domain_id'] = response.xpath('//input[@id="sid"]/@value').get()
-        #item['name'] = response.xpath('//div[@id="name"]').get()
-        #item['description'] = response.xpath('//div[@id="description"]').get()
-        return item
+    def parse(self, response):
+        item = RatopatiItem()
+        item['Title'] = response.css('h1::text').extract_first()
+        item['Url'] = response.request.url
+        item['News'] = response.css('div.imgAdj').css(
+            'div.imgAdj').css('p::text').getall()
+
+        # Join all articles into single string and remove new lines
+        item['News'] = ''.join(item['News'])
+        item['News'] = item['News'].replace('\n', '')
+        item['News'] = item['News'].replace('\xa0', '')
+
+        yield item
