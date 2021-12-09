@@ -8,6 +8,13 @@ def gen_urls():
         yield 'https://ratopati.com/story/' + str(i)
 
 
+def clean_text(text):
+    text = text.replace('\n', '')
+    text = text.replace('\xa0', '')
+    text = text.strip()
+    return text
+
+
 class RatopatiSpiderSpider(scrapy.Spider):
     name = 'ratopati_spider'
 
@@ -22,7 +29,6 @@ class RatopatiSpiderSpider(scrapy.Spider):
 
         # Join all articles into single string and remove new lines
         item['News'] = ''.join(item['News'])
-        item['News'] = item['News'].replace('\n', '')
-        item['News'] = item['News'].replace('\xa0', '')
+        item['News'] = clean_text(item['News'])
 
         yield item
