@@ -73,7 +73,7 @@ Start Crawling Setopati
 
 Start Crawling Gorkhapatra Online
 
-⚠️⚠️ Caution: Must read Gorkhapatra config carefully file before scraping⚠️⚠️
+⚠️ Caution: Must read Gorkhapatra config file before scraping⚠️
 
 ```bash
   cd gorkhapatra
