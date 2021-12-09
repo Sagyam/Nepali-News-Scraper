@@ -60,8 +60,15 @@ Start Crawling Online Khabar
 Start Crawling Ratopati
 
 ```bash
-  cd scraper
+  cd ratopati
   scrapy crawl ratopati_spider
+```
+
+Start Crawling Setopati
+
+```bash
+  cd setopati
+  scrapy crawl setopati_spider
 ```
 
 # Caution ⚠️
@@ -69,10 +76,6 @@ Start Crawling Ratopati
 - **To pause gracefully crawling hit Ctrl+C once**
 - **To pause forcefully hit Ctrl+C twice**
 - **For OnlineKhabar it is recommended to scrape 2000 pages in one go**
-
-## Roadmap
-
-- Build wew spider for https://ekantipur.com/
 
 ## Tech Stack
 
