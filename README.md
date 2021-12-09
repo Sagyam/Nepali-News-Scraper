@@ -71,6 +71,15 @@ Start Crawling Setopati
   scrapy crawl setopati_spider
 ```
 
+Start Crawling Gorkhapatra Online
+
+⚠️⚠️ Caution: Must read Gorkhapatra config carefully file before scraping⚠️⚠️
+
+```bash
+  cd gorkhapatra
+  scrapy crawl gorkhapatra_spider
+```
+
 # Caution ⚠️
 
 - **To pause gracefully crawling hit Ctrl+C once**

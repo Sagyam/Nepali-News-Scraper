@@ -41,4 +41,4 @@ class SetopatiSpiderSpider(scrapy.Spider):
         item['News'] = ''.join(item['News'])
         item['News'] = clean_text(item['News'])
 
-        return item
+        yield item
