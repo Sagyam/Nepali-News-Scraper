@@ -34,4 +34,4 @@ TOPICS = ['mainnews', 'national', 'economics',
           'opinion', 'entertainment', 'loksewa', 'interview']
 
 START_INDEX = 1
-END_INDEX = 2
+END_INDEX = 10

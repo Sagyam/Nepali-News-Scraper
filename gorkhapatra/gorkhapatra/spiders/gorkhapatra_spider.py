@@ -11,6 +11,7 @@ def get_pages():
             yield 'https://gorkhapatraonline.com/' + str(topic) + '?page=' + str(i)
 
 
+
 def get_urls():
     parser = 'lxml'
     for page in get_pages():
@@ -24,6 +25,7 @@ def get_urls():
                 yield link['href']
 
 
+
 def clean_text(text):
     text = text.replace('\n', '')
     text = text.replace('\xa0', '')
@@ -34,7 +36,7 @@ def clean_text(text):
 class GorkhapatraSpiderSpider(scrapy.Spider):
     name = 'gorkhapatra_spider'
 
-    start_urls = [url for url in get_urls()]
+    start_urls = (url for url in get_urls())
 
     def parse(self, response):
         item = GorkhapatraItem()
