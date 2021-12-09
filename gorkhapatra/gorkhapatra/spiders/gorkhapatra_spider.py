@@ -11,7 +11,6 @@ def get_pages():
             yield 'https://gorkhapatraonline.com/' + str(topic) + '?page=' + str(i)
 
 
-
 def get_urls():
     parser = 'lxml'
     for page in get_pages():
@@ -23,7 +22,6 @@ def get_urls():
         for a_tag in soup:
             for link in a_tag.find_all('a', href=True):
                 yield link['href']
-
 
 
 def clean_text(text):
