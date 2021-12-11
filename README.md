@@ -80,6 +80,13 @@ Start Crawling Gorkhapatra Online
   scrapy crawl gorkhapatra_spider
 ```
 
+Start Crawling Ekantipur
+
+```bash
+  cd ekantipur
+  scrapy crawl ekantipur_spider
+```
+
 # Caution ⚠️
 
 - **To pause gracefully crawling hit Ctrl+C once**
