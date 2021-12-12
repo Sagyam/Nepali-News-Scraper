@@ -3,5 +3,5 @@
 Configuration for Ekantipur Scraper
 
 '''
-START_DATE = '2021-12-11'
-END_DATE = '2021-12-11'
+START_DATE = '2019-1-1'
+END_DATE = '2019-1-2'
