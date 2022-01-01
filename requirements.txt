@@ -22,7 +22,7 @@ itemloaders==1.0.4
 jmespath==0.10.0
 langdetect==1.0.9
 lazy-object-proxy==1.6.0
-lxml==4.6.3
+lxml==4.6.5
 mccabe==0.6.1
 parsel==1.6.0
 #pipkg-resources==0.0.0
