@@ -49,7 +49,7 @@ six==1.16.0
 soupsieve==2.2.1
 toml==0.10.2
 tqdm==4.55.1
-Twisted==22.1.0
+Twisted==22.4.0
 typed-ast==1.4.3
 ua-parser==0.10.0
 urllib3>=1.26.5
