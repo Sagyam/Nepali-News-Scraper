@@ -1,5 +1,4 @@
-![Logo](https://www.cryt.ie/wp-content/uploads/sites/3/2020/03/scrapy-1024x411.png)
-
+![Logo](https://raw.githubusercontent.com/Sagyam/Nepali-News-Scraper/master/scrapy.png)
 ![GitHub](https://img.shields.io/github/license/sagyam/Nepali-News-Scraper?style=for-the-badge)
 [![wakatime](https://wakatime.com/badge/user/4ce09006-1b8c-491f-ace1-a70b32d5fc1c/project/0b636540-37fc-48d2-a90e-0d43d369708f.svg?style=for-the-badge)](https://wakatime.com/badge/user/4ce09006-1b8c-491f-ace1-a70b32d5fc1c/project/0b636540-37fc-48d2-a90e-0d43d369708f?style=for-the-badge)
 
