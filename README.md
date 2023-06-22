@@ -4,7 +4,7 @@
 
 # Nepali News Scraper
 
-A crawler that scrapes news from a nepali news portal [Online Khabar](onlinekhabar.com)
+A crawler that scrapes news from various nepali news portals.
 
 ## Run Locally
 
