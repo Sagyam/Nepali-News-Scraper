@@ -105,6 +105,4 @@ Here are some related projects
 
 - [hemanta212/scrapers](https://github.com/hemanta212/scrapers)
 
-## Feedback
 
-If you have any feedback, please reach out to me at sagyamthapa32@gmail.com
